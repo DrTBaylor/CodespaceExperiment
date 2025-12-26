@@ -1,0 +1,23 @@
+{
+    "name": "Verilog Lab Environment",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:1": {}
+    },
+    // Installs Icarus Verilog for simulation
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y iverilog",
+    
+    "customizations": {
+        "vscode": {
+            // This installs the extensions automatically for the student
+            "extensions": [
+                "mshr-h.verilog-hdl-support", // Syntax highlighting
+                "wavetrace.wavetrace"         // Browser-based waveform viewer
+            ],
+            "settings": {
+                // Optional: makes the terminal open automatically
+                "terminal.integrated.defaultProfile.linux": "bash"
+            }
+        }
+    }
+}
